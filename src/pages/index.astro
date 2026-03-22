@@ -15,71 +15,71 @@ const recentUpdates = allUpdates
   <div class="max-w-4xl mx-auto px-4 py-20 sm:py-32">
     <div class="text-center mb-16">
       <h1 class="text-4xl sm:text-5xl font-bold mb-4">
-        <span class="text-cyan-400">Nan</span> Portfolio
+        <span class="text-olive-400">Nan</span> Portfolio
       </h1>
-      <p class="text-lg text-slate-300 mb-4">
+      <p class="text-lg text-stone-300 mb-4">
         Personal portfolio of Nan, containing projects and experiences.
       </p>
-      <p class="text-slate-400 max-w-2xl mx-auto">
+      <p class="text-stone-400 max-w-2xl mx-auto">
         A developer's lab, a teacher's classroom, and a digital space for life updates.
       </p>
     </div>
 
     <!-- Status Card -->
-    <div class="bg-slate-800/50 border border-slate-700 rounded-lg p-8 mb-20 text-center">
-      <p class="text-sm text-cyan-400 font-semibold uppercase tracking-wider mb-2">Current Status</p>
+    <div class="bg-stone-800/50 border border-stone-700 rounded-lg p-8 mb-20 text-center">
+      <p class="text-sm text-olive-400 font-semibold uppercase tracking-wider mb-2">Current Status</p>
       <p class="text-2xl font-bold">Undergrad Student</p>
-      <p class="text-slate-400 mt-2">Infirmatics Education Student, that focus not only at education, but also learning about Data, Machine Learning, Computer Vision, and Robotics.</p>
+      <p class="text-stone-400 mt-2">Infirmatics Education Student, that focus not only at education, but also learning about Data, Machine Learning, Computer Vision, and Robotics.</p>
     </div>
 
     <!-- Features Grid -->
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-20">
-      <a href="/nansite/lab" class="group bg-slate-800/50 border border-slate-700 rounded-lg p-6 hover:border-cyan-400 transition-all">
+      <a href="/nansite/lab" class="group bg-stone-800/50 border border-stone-700 rounded-lg p-6 hover:border-olive-400 transition-all">
         <div class="flex items-center gap-3 mb-4">
-          <Code2 size={28} class="text-cyan-400" />
-          <h3 class="text-lg font-bold group-hover:text-cyan-400 transition-colors">The Lab</h3>
+          <Code2 size={28} class="text-olive-400" />
+          <h3 class="text-lg font-bold group-hover:text-olive-400 transition-colors">The Lab</h3>
         </div>
-        <p class="text-slate-400 text-sm">Explore AI, Robotics, and web projects.</p>
+        <p class="text-stone-400 text-sm">Explore AI, Robotics, and web projects.</p>
       </a>
 
-      <a href="/nansite/classroom" class="group bg-slate-800/50 border border-slate-700 rounded-lg p-6 hover:border-cyan-400 transition-all">
+      <a href="/nansite/classroom" class="group bg-stone-800/50 border border-stone-700 rounded-lg p-6 hover:border-olive-400 transition-all">
         <div class="flex items-center gap-3 mb-4">
-          <BookMarked size={28} class="text-cyan-400" />
-          <h3 class="text-lg font-bold group-hover:text-cyan-400 transition-colors">Classroom</h3>
+          <BookMarked size={28} class="text-olive-400" />
+          <h3 class="text-lg font-bold group-hover:text-olive-400 transition-colors">Classroom</h3>
         </div>
-        <p class="text-slate-400 text-sm">Implementation and Update on Education Major.</p>
+        <p class="text-stone-400 text-sm">Implementation and Update on Education Major.</p>
       </a>
 
-      <a href="/nansite/feed" class="group bg-slate-800/50 border border-slate-700 rounded-lg p-6 hover:border-cyan-400 transition-all">
+      <a href="/nansite/feed" class="group bg-stone-800/50 border border-stone-700 rounded-lg p-6 hover:border-olive-400 transition-all">
         <div class="flex items-center gap-3 mb-4">
-          <Zap size={28} class="text-cyan-400" />
-          <h3 class="text-lg font-bold group-hover:text-cyan-400 transition-colors">Feed</h3>
+          <Zap size={28} class="text-olive-400" />
+          <h3 class="text-lg font-bold group-hover:text-olive-400 transition-colors">Feed</h3>
         </div>
-        <p class="text-slate-400 text-sm">Hobbies and personal interests.</p>
+        <p class="text-stone-400 text-sm">Hobbies and personal interests.</p>
       </a>
     </div>
 
     <!-- Recent Updates -->
     {recentUpdates.length > 0 && (
       <div>
-        <h2 class="text-2xl font-bold mb-8 text-cyan-400">Recent Updates</h2>
+        <h2 class="text-2xl font-bold mb-8 text-olive-400">Recent Updates</h2>
         <div class="space-y-4">
           {recentUpdates.map((update) => (
             <a 
               href={`/feed/${update.id}`}
-              class="block bg-slate-800/50 border border-slate-700 rounded-lg p-6 hover:border-cyan-400 hover:bg-slate-800 transition-all group"
+              class="block bg-stone-800/50 border border-stone-700 rounded-lg p-6 hover:border-olive-400 hover:bg-stone-800 transition-all group"
             >
               <div class="flex items-start justify-between gap-4">
                 <div class="flex-1">
-                  <h3 class="font-bold text-lg mb-2 group-hover:text-cyan-400 transition-colors">
+                  <h3 class="font-bold text-lg mb-2 group-hover:text-olive-400 transition-colors">
                     {update.data.title}
                   </h3>
-                  <p class="text-slate-400 text-sm mb-3">{update.data.description}</p>
+                  <p class="text-stone-400 text-sm mb-3">{update.data.description}</p>
                   <div class="flex items-center gap-2">
-                    <span class="text-xs bg-slate-700 px-2 py-1 rounded text-slate-300">
+                    <span class="text-xs bg-stone-700 px-2 py-1 rounded text-stone-300">
                       #{update.data.category}
                     </span>
-                    <span class="text-xs text-slate-500">
+                    <span class="text-xs text-stone-500">
                       {update.data.date.toLocaleDateString('en-US', { 
                         year: 'numeric', 
                         month: 'short', 
@@ -93,7 +93,7 @@ const recentUpdates = allUpdates
           ))}
         </div>
         <div class="mt-8 text-center">
-          <a href="/nansite/feed" class="inline-block px-6 py-3 bg-cyan-600 hover:bg-cyan-700 rounded-lg font-semibold transition-colors">
+          <a href="/nansite/feed" class="inline-block px-6 py-3 bg-olive-600 hover:bg-olive-700 rounded-lg font-semibold transition-colors">
             View All Updates
           </a>
         </div>

@@ -15,11 +15,11 @@ const currentPath = Astro.url.pathname;
     <meta name="generator" content={Astro.generator} />
     <title>Nan Portfolio</title>
   </head>
-  <body class="bg-slate-950 text-slate-100 font-sans">
+  <body class="bg-stone-950 text-stone-100 font-sans">
     <!-- Navigation -->
-    <nav class="sticky top-0 z-50 bg-slate-900/95 backdrop-blur-sm border-b border-slate-800">
+    <nav class="sticky top-0 z-50 bg-stone-900/95 backdrop-blur-sm border-b border-stone-800">
       <div class="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
-        <a href="/nansite/" class="text-xl font-bold text-cyan-400 hover:text-cyan-300 transition-colors">
+        <a href="/nansite/" class="text-xl font-bold text-olive-400 hover:text-olive-300 transition-colors">
           ✦ Nan Portfolio
         </a>
         
@@ -28,7 +28,7 @@ const currentPath = Astro.url.pathname;
             <a 
               href="/nansite/" 
               class={`flex items-center gap-2 transition-colors ${
-                currentPath === '/personal-site/' ? 'text-cyan-400' : 'text-slate-300 hover:text-cyan-400'
+                currentPath === '/personal-site/' ? 'text-olive-400' : 'text-stone-300 hover:text-olive-400'
               }`}
             >
               <Home size={18} />
@@ -39,7 +39,7 @@ const currentPath = Astro.url.pathname;
             <a 
               href="/nansite/lab" 
               class={`flex items-center gap-2 transition-colors ${
-                currentPath.startsWith('/personal-site/lab') ? 'text-cyan-400' : 'text-slate-300 hover:text-cyan-400'
+                currentPath.startsWith('/personal-site/lab') ? 'text-olive-400' : 'text-stone-300 hover:text-olive-400'
               }`}
             >
               <Beaker size={18} />
@@ -50,7 +50,7 @@ const currentPath = Astro.url.pathname;
             <a 
               href="/nansite/classroom" 
               class={`flex items-center gap-2 transition-colors ${
-                currentPath.startsWith('/personal-site/classroom') ? 'text-cyan-400' : 'text-slate-300 hover:text-cyan-400'
+                currentPath.startsWith('/personal-site/classroom') ? 'text-olive-400' : 'text-stone-300 hover:text-olive-400'
               }`}
             >
               <BookOpen size={18} />
@@ -61,7 +61,7 @@ const currentPath = Astro.url.pathname;
             <a 
               href="/nansite/feed" 
               class={`flex items-center gap-2 transition-colors ${
-                currentPath.startsWith('/personal-site/feed') ? 'text-cyan-400' : 'text-slate-300 hover:text-cyan-400'
+                currentPath.startsWith('/personal-site/feed') ? 'text-olive-400' : 'text-stone-300 hover:text-olive-400'
               }`}
             >
               <FileText size={18} />
@@ -78,34 +78,34 @@ const currentPath = Astro.url.pathname;
     </main>
 
     <!-- Footer -->
-    <footer class="bg-slate-900 border-t border-slate-800 mt-20">
+    <footer class="bg-stone-900 border-t border-stone-800 mt-20">
       <div class="max-w-4xl mx-auto px-4 py-12">
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-8">
           <div>
-            <h3 class="font-bold text-cyan-400 mb-4">Navigation</h3>
-            <ul class="space-y-2 text-slate-300 text-sm">
-              <li><a href="/nansite/" class="hover:text-cyan-400 transition-colors">Home</a></li>
-              <li><a href="/nansite/lab" class="hover:text-cyan-400 transition-colors">Lab</a></li>
-              <li><a href="/nansite/classroom" class="hover:text-cyan-400 transition-colors">Classroom</a></li>
-              <li><a href="/nansite/feed" class="hover:text-cyan-400 transition-colors">Feed</a></li>
+            <h3 class="font-bold text-olive-400 mb-4">Navigation</h3>
+            <ul class="space-y-2 text-stone-300 text-sm">
+              <li><a href="/nansite/" class="hover:text-olive-400 transition-colors">Home</a></li>
+              <li><a href="/nansite/lab" class="hover:text-olive-400 transition-colors">Lab</a></li>
+              <li><a href="/nansite/classroom" class="hover:text-olive-400 transition-colors">Classroom</a></li>
+              <li><a href="/nansite/feed" class="hover:text-olive-400 transition-colors">Feed</a></li>
             </ul>
           </div>
           <div>
-            <h3 class="font-bold text-cyan-400 mb-4">Connect</h3>
-            <ul class="space-y-2 text-slate-300 text-sm">
-              <li><a href="https://github.com" target="_blank" rel="noopener" class="hover:text-cyan-400 transition-colors">GitHub</a></li>
-              <li><a href="https://twitter.com" target="_blank" rel="noopener" class="hover:text-cyan-400 transition-colors">Twitter</a></li>
-              <li><a href="mailto:hello@example.com" class="hover:text-cyan-400 transition-colors">Email</a></li>
+            <h3 class="font-bold text-olive-400 mb-4">Connect</h3>
+            <ul class="space-y-2 text-stone-300 text-sm">
+              <li><a href="https://github.com" target="_blank" rel="noopener" class="hover:text-olive-400 transition-colors">GitHub</a></li>
+              <li><a href="https://twitter.com" target="_blank" rel="noopener" class="hover:text-olive-400 transition-colors">Twitter</a></li>
+              <li><a href="mailto:hello@example.com" class="hover:text-olive-400 transition-colors">Email</a></li>
             </ul>
           </div>
           <div>
-            <h3 class="font-bold text-cyan-400 mb-4">About</h3>
-            <p class="text-slate-300 text-sm">
-              Built with <span class="text-orange-400">Astro</span> & <span class="text-cyan-400">Tailwind CSS</span>. Designed for performance.
+            <h3 class="font-bold text-olive-400 mb-4">About</h3>
+            <p class="text-stone-300 text-sm">
+              Built with <span class="text-choco-400">Astro</span> & <span class="text-olive-400">Tailwind CSS</span>. Designed for performance.
             </p>
           </div>
         </div>
-        <div class="pt-8 border-t border-slate-800 text-center text-slate-400 text-sm">
+        <div class="pt-8 border-t border-stone-800 text-center text-stone-400 text-sm">
           <p>&copy; 2026 Astro-Light. Built with care.</p>
         </div>
       </div>

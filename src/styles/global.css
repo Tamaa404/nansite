@@ -1,28 +1,46 @@
-@import "tailwindcss";
+﻿@import "tailwindcss";
+
+@theme {
+  --color-olive-200: #c9d2a6;
+  --color-olive-300: #a3b18a;
+  --color-olive-400: #8a9a5b;
+  --color-olive-500: #708238;
+  --color-olive-600: #555d25;
+  --color-olive-700: #42491d;
+  --color-olive-900: #333d15;
+
+  --color-choco-200: #d6af95;
+  --color-choco-300: #b97f59;
+  --color-choco-400: #9e6440;
+  --color-choco-500: #7b4e31;
+  --color-choco-600: #573420;
+  --color-choco-700: #4a2c1b;
+  --color-choco-900: #3a2215;
+}
 
 .prose {
   color: rgb(var(--color-text));
 }
 
 .prose :where(a):not(:where([class~=no-underline])) {
-  @apply text-cyan-400 hover:text-cyan-300 transition-colors;
+  @apply text-olive-400 hover:text-olive-300 transition-colors;
 }
 
 .prose :where(code):not(:where([class~=no-highlight])) {
-  @apply bg-slate-800 px-2 py-1 rounded text-cyan-200 text-sm;
+  @apply bg-stone-800 px-2 py-1 rounded text-olive-200 text-sm;
 }
 
 .prose :where(pre) {
-  @apply bg-slate-900 border border-slate-700 rounded-lg overflow-x-auto;
+  @apply bg-stone-900 border border-stone-700 rounded-lg overflow-x-auto;
 }
 
 .prose :where(blockquote) {
-  @apply border-l-4 border-cyan-400 px-4 py-2 text-slate-300 italic;
+  @apply border-l-4 border-olive-400 px-4 py-2 text-stone-300 italic;
 }
 
 .prose :where(h2),
 .prose :where(h3) {
-  @apply text-cyan-400 mt-8 mb-4;
+  @apply text-olive-400 mt-8 mb-4;
 }
 
 .prose :where(ul),

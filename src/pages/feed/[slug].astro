@@ -20,25 +20,25 @@ const categoryColors: Record<string, { bg: string; text: string }> = {
   'AI': { bg: 'bg-purple-900/50', text: 'text-purple-300' },
   'Teaching': { bg: 'bg-blue-900/50', text: 'text-blue-300' },
   'Personal': { bg: 'bg-pink-900/50', text: 'text-pink-300' },
-  'Robotics': { bg: 'bg-orange-900/50', text: 'text-orange-300' },
-  'Web Dev': { bg: 'bg-cyan-900/50', text: 'text-cyan-300' },
+  'Robotics': { bg: 'bg-choco-900/50', text: 'text-choco-300' },
+  'Web Dev': { bg: 'bg-olive-900/50', text: 'text-olive-300' },
 };
 
-const colors = categoryColors[update.data.category] || { bg: 'bg-slate-700', text: 'text-slate-300' };
+const colors = categoryColors[update.data.category] || { bg: 'bg-stone-700', text: 'text-stone-300' };
 ---
 
 <MainLayout>
   <article class="max-w-3xl mx-auto px-4 py-20">
     <header class="mb-12">
       <div class="mb-4">
-        <a href="/feed" class="text-cyan-400 hover:text-cyan-300 transition-colors">← Back to Feed</a>
+        <a href="/feed" class="text-olive-400 hover:text-olive-300 transition-colors">← Back to Feed</a>
       </div>
       <h1 class="text-4xl sm:text-5xl font-bold mb-4">{update.data.title}</h1>
       <div class="flex flex-wrap items-center gap-3 mb-4">
         <span class={`text-sm font-semibold px-3 py-1 rounded-full ${colors.bg} ${colors.text}`}>
           #{update.data.category}
         </span>
-        <time class="text-slate-400">
+        <time class="text-stone-400">
           {update.data.date.toLocaleDateString('en-US', { 
             year: 'numeric', 
             month: 'long', 
@@ -46,24 +46,24 @@ const colors = categoryColors[update.data.category] || { bg: 'bg-slate-700', tex
           })}
         </time>
       </div>
-      <p class="text-lg text-slate-300">{update.data.description}</p>
+      <p class="text-lg text-stone-300">{update.data.description}</p>
     </header>
 
     <div class="prose prose-invert max-w-none">
-      <p class="text-slate-300 text-lg leading-relaxed">
+      <p class="text-stone-300 text-lg leading-relaxed">
         {update.data.description}
       </p>
-      <p class="text-slate-400 text-sm mt-8">
+      <p class="text-stone-400 text-sm mt-8">
         📖 Full content display coming soon. For now, check the Feed page for the complete update.
       </p>
     </div>
 
-    <footer class="mt-16 pt-8 border-t border-slate-700">
+    <footer class="mt-16 pt-8 border-t border-stone-700">
       <div class="flex items-center justify-between">
-        <a href="/feed" class="text-cyan-400 hover:text-cyan-300 transition-colors font-semibold">
+        <a href="/feed" class="text-olive-400 hover:text-olive-300 transition-colors font-semibold">
           ← Back to Feed
         </a>
-        <div class="text-sm text-slate-500">
+        <div class="text-sm text-stone-500">
           Update #{update.id}
         </div>
       </div>

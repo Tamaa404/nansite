@@ -18,7 +18,7 @@ const pythonModules = allModules
   <div class="max-w-4xl mx-auto px-4 py-20">
     <div class="mb-16">
       <h1 class="text-4xl font-bold mb-4">The Classroom</h1>
-      <p class="text-lg text-slate-300">
+      <p class="text-lg text-stone-300">
         Educational modules for Arduino and Python. Designed to teach core concepts through hands-on projects.
       </p>
     </div>
@@ -26,21 +26,21 @@ const pythonModules = allModules
     {arduinoModules.length > 0 && (
       <div class="mb-16">
         <div class="flex items-center gap-3 mb-8">
-          <BookOpen class="text-orange-400" size={28} />
+          <BookOpen class="text-choco-400" size={28} />
           <h2 class="text-2xl font-bold">Arduino Modules</h2>
         </div>
         <div class="space-y-4">
           {arduinoModules.map((module) => (
             <a 
               href={`/classroom/${module.id}`}
-              class="block bg-slate-800/50 border border-slate-700 rounded-lg p-6 hover:border-orange-400 hover:bg-slate-800 transition-all group"
+              class="block bg-stone-800/50 border border-stone-700 rounded-lg p-6 hover:border-choco-400 hover:bg-stone-800 transition-all group"
             >
               <div class="flex items-start justify-between gap-4">
                 <div class="flex-1">
-                  <h3 class="font-bold text-lg mb-2 group-hover:text-orange-400 transition-colors">
+                  <h3 class="font-bold text-lg mb-2 group-hover:text-choco-400 transition-colors">
                     {module.data.title}
                   </h3>
-                  <p class="text-slate-400 text-sm mb-4">{module.data.description}</p>
+                  <p class="text-stone-400 text-sm mb-4">{module.data.description}</p>
                   <div class="flex items-center gap-2">
                     <span class={`text-xs px-2 py-1 rounded font-semibold ${
                       module.data.level === 'Beginner' ? 'bg-green-900/50 text-green-300' :
@@ -49,7 +49,7 @@ const pythonModules = allModules
                     }`}>
                       {module.data.level}
                     </span>
-                    <span class="text-xs text-slate-500">
+                    <span class="text-xs text-stone-500">
                       {module.data.date.toLocaleDateString('en-US', { 
                         year: 'numeric', 
                         month: 'short', 
@@ -75,14 +75,14 @@ const pythonModules = allModules
           {pythonModules.map((module) => (
             <a 
               href={`/classroom/${module.id}`}
-              class="block bg-slate-800/50 border border-slate-700 rounded-lg p-6 hover:border-blue-400 hover:bg-slate-800 transition-all group"
+              class="block bg-stone-800/50 border border-stone-700 rounded-lg p-6 hover:border-blue-400 hover:bg-stone-800 transition-all group"
             >
               <div class="flex items-start justify-between gap-4">
                 <div class="flex-1">
                   <h3 class="font-bold text-lg mb-2 group-hover:text-blue-400 transition-colors">
                     {module.data.title}
                   </h3>
-                  <p class="text-slate-400 text-sm mb-4">{module.data.description}</p>
+                  <p class="text-stone-400 text-sm mb-4">{module.data.description}</p>
                   <div class="flex items-center gap-2">
                     <span class={`text-xs px-2 py-1 rounded font-semibold ${
                       module.data.level === 'Beginner' ? 'bg-green-900/50 text-green-300' :
@@ -91,7 +91,7 @@ const pythonModules = allModules
                     }`}>
                       {module.data.level}
                     </span>
-                    <span class="text-xs text-slate-500">
+                    <span class="text-xs text-stone-500">
                       {module.data.date.toLocaleDateString('en-US', { 
                         year: 'numeric', 
                         month: 'short', 
@@ -108,9 +108,9 @@ const pythonModules = allModules
     )}
 
     {allModules.length === 0 && (
-      <div class="bg-slate-800/50 border border-slate-700 rounded-lg p-12 text-center">
-        <p class="text-slate-400 mb-4">No modules yet. Coming soon!</p>
-        <p class="text-sm text-slate-500">Educational content will be published here.</p>
+      <div class="bg-stone-800/50 border border-stone-700 rounded-lg p-12 text-center">
+        <p class="text-stone-400 mb-4">No modules yet. Coming soon!</p>
+        <p class="text-sm text-stone-500">Educational content will be published here.</p>
       </div>
     )}
   </div>
