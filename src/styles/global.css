@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+.prose {
+  color: rgb(var(--color-text));
+}
+
+.prose :where(a):not(:where([class~=no-underline])) {
+  @apply text-cyan-400 hover:text-cyan-300 transition-colors;
+}
+
+.prose :where(code):not(:where([class~=no-highlight])) {
+  @apply bg-slate-800 px-2 py-1 rounded text-cyan-200 text-sm;
+}
+
+.prose :where(pre) {
+  @apply bg-slate-900 border border-slate-700 rounded-lg overflow-x-auto;
+}
+
+.prose :where(blockquote) {
+  @apply border-l-4 border-cyan-400 px-4 py-2 text-slate-300 italic;
+}
+
+.prose :where(h2),
+.prose :where(h3) {
+  @apply text-cyan-400 mt-8 mb-4;
+}
+
+.prose :where(ul),
+.prose :where(ol) {
+  @apply space-y-2;
+}
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}

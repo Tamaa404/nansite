@@ -1,0 +1,66 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const modules = await getCollection('teaching');
+  return modules.map(module => ({
+    params: { slug: module.id },
+    props: { module }
+  }));
+}
+
+interface Props {
+  module: any;
+}
+
+const { module } = Astro.props;
+
+const subjectColor = module.data.subject === 'Arduino' ? 'text-orange-400' : 'text-blue-400';
+const levelColor = 
+  module.data.level === 'Beginner' ? 'bg-green-900/50 text-green-300' :
+  module.data.level === 'Intermediate' ? 'bg-yellow-900/50 text-yellow-300' :
+  'bg-red-900/50 text-red-300';
+---
+
+<MainLayout>
+  <article class="max-w-3xl mx-auto px-4 py-20">
+    <header class="mb-12">
+      <div class="mb-4">
+        <a href="/classroom" class="text-cyan-400 hover:text-cyan-300 transition-colors">← Back to Classroom</a>
+      </div>
+      <h1 class="text-4xl sm:text-5xl font-bold mb-4">{module.data.title}</h1>
+      <div class="flex flex-wrap items-center gap-3 mb-6">
+        <span class={`text-sm font-semibold ${subjectColor}`}>
+          {module.data.subject}
+        </span>
+        <span class={`text-sm font-semibold px-3 py-1 rounded-full ${levelColor}`}>
+          {module.data.level}
+        </span>
+        <time class="text-slate-400 text-sm">
+          {module.data.date.toLocaleDateString('en-US', { 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric' 
+          })}
+        </time>
+      </div>
+      <p class="text-lg text-slate-300">{module.data.description}</p>
+    </header>
+
+    <div class="prose prose-invert max-w-none">
+      <p class="text-slate-300 text-lg leading-relaxed">
+        {module.data.description}
+      </p>
+      <p class="text-slate-400 text-sm mt-8">
+        📚 Full lesson content coming soon. Check back for detailed tutorials and examples.
+      </p>
+    </div>
+
+    <footer class="mt-16 pt-8 border-t border-slate-700">
+      <a href="/classroom" class="text-cyan-400 hover:text-cyan-300 transition-colors font-semibold">
+        ← Back to Classroom
+      </a>
+    </footer>
+  </article>
+</MainLayout>

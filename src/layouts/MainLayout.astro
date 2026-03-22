@@ -1,0 +1,120 @@
+---
+import { Home, Beaker, BookOpen, FileText } from 'lucide-astro';
+import '../styles/global.css';
+
+const currentPath = Astro.url.pathname;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="A high-performance static portfolio built with Astro" />
+    <link rel="icon" type="image/svg+xml" href="/nansite/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro-Light Portfolio</title>
+  </head>
+  <body class="bg-slate-950 text-slate-100 font-sans">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-slate-900/95 backdrop-blur-sm border-b border-slate-800">
+      <div class="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
+        <a href="/nansite/" class="text-xl font-bold text-cyan-400 hover:text-cyan-300 transition-colors">
+          ✦ Astro-Light
+        </a>
+        
+        <ul class="flex gap-8 items-center">
+          <li>
+            <a 
+              href="/nansite/" 
+              class={`flex items-center gap-2 transition-colors ${
+                currentPath === '/personal-site/' ? 'text-cyan-400' : 'text-slate-300 hover:text-cyan-400'
+              }`}
+            >
+              <Home size={18} />
+              <span class="hidden sm:inline">Home</span>
+            </a>
+          </li>
+          <li>
+            <a 
+              href="/nansite/lab" 
+              class={`flex items-center gap-2 transition-colors ${
+                currentPath.startsWith('/personal-site/lab') ? 'text-cyan-400' : 'text-slate-300 hover:text-cyan-400'
+              }`}
+            >
+              <Beaker size={18} />
+              <span class="hidden sm:inline">Lab</span>
+            </a>
+          </li>
+          <li>
+            <a 
+              href="/nansite/classroom" 
+              class={`flex items-center gap-2 transition-colors ${
+                currentPath.startsWith('/personal-site/classroom') ? 'text-cyan-400' : 'text-slate-300 hover:text-cyan-400'
+              }`}
+            >
+              <BookOpen size={18} />
+              <span class="hidden sm:inline">Classroom</span>
+            </a>
+          </li>
+          <li>
+            <a 
+              href="/nansite/feed" 
+              class={`flex items-center gap-2 transition-colors ${
+                currentPath.startsWith('/personal-site/feed') ? 'text-cyan-400' : 'text-slate-300 hover:text-cyan-400'
+              }`}
+            >
+              <FileText size={18} />
+              <span class="hidden sm:inline">Feed</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="min-h-[calc(100vh-200px)]">
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 border-t border-slate-800 mt-20">
+      <div class="max-w-4xl mx-auto px-4 py-12">
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-8">
+          <div>
+            <h3 class="font-bold text-cyan-400 mb-4">Navigation</h3>
+            <ul class="space-y-2 text-slate-300 text-sm">
+              <li><a href="/nansite/" class="hover:text-cyan-400 transition-colors">Home</a></li>
+              <li><a href="/nansite/lab" class="hover:text-cyan-400 transition-colors">Lab</a></li>
+              <li><a href="/nansite/classroom" class="hover:text-cyan-400 transition-colors">Classroom</a></li>
+              <li><a href="/nansite/feed" class="hover:text-cyan-400 transition-colors">Feed</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-bold text-cyan-400 mb-4">Connect</h3>
+            <ul class="space-y-2 text-slate-300 text-sm">
+              <li><a href="https://github.com" target="_blank" rel="noopener" class="hover:text-cyan-400 transition-colors">GitHub</a></li>
+              <li><a href="https://twitter.com" target="_blank" rel="noopener" class="hover:text-cyan-400 transition-colors">Twitter</a></li>
+              <li><a href="mailto:hello@example.com" class="hover:text-cyan-400 transition-colors">Email</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-bold text-cyan-400 mb-4">About</h3>
+            <p class="text-slate-300 text-sm">
+              Built with <span class="text-orange-400">Astro</span> & <span class="text-cyan-400">Tailwind CSS</span>. Designed for performance.
+            </p>
+          </div>
+        </div>
+        <div class="pt-8 border-t border-slate-800 text-center text-slate-400 text-sm">
+          <p>&copy; 2026 Astro-Light. Built with care.</p>
+        </div>
+      </div>
+    </footer>
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </body>
+</html>
